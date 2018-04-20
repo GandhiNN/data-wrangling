@@ -101,7 +101,7 @@ def csvToDb(raise_flag, csvfile, table_name, db_name, REGEX_MAPS):
     return schema
 
 # create an argument parser function: argument_list
-def argument_list(REGEX_MAPS):
+def argument_list():
     
     # Create a parser object: parser
     parser = argparse.ArgumentParser(description="Define function arguments")
@@ -140,7 +140,7 @@ def main():
                                                                           # for storing date/times
                                                                           # but keep it anyway
     ]
-    raise_flag, csvfile, db, table = argument_list(REGEX_MAPS)
+    raise_flag, csvfile, db, table = argument_list()
     #print(raise_flag, csvfile, db, table)
     table_schema = csvToDb(raise_flag, csvfile, table, db, REGEX_MAPS)
     print("DB Loading Success!" + '\n'
